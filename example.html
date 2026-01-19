@@ -1,0 +1,643 @@
+<html lang="es-CL"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ayudamos a pequeños negocios en Chile a tener su página web profesional. Acompañamiento personalizado y soporte continuo. Cotiza gratis hoy.">
+    <meta name="keywords" content="páginas web Chile, diseño web pymes, crear sitio web negocio, desarrollo web Santiago, páginas web emprendedores, diseño web profesional">
+    <meta name="author" content="SitiosChile">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="CL">
+    <meta name="geo.country" content="Chile">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Páginas Web para Pequeños Negocios | SitiosChile">
+    <meta property="og:description" content="Ayudamos a emprendedores y pymes a tener su página web profesional con acompañamiento personalizado.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CL">
+
+    <title>Páginas Web para Pequeños Negocios en Chile | SitiosChile</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-badge {
+            background: #fbbf24;
+            color: #1f2937;
+            font-weight: 700;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 1.1rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Services */
+        .service-card {
+            border: none;
+            border-radius: 16px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* Pricing */
+        .pricing-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            border-color: var(--primary-color);
+        }
+
+        .pricing-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        }
+
+        /* Footer */
+        footer {
+            background: #1f2937;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .btn-outline-light {
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* Navbar styles */
+        #mainNavbar {
+            transition: background 0.3s, backdrop-filter 0.3s;
+            background: transparent;
+        }
+
+        #mainNavbar.scrolled {
+            background: rgba(30, 64, 175, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        #mainNavbar .navbar-toggler {
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(30, 64, 175, 0.8);
+        }
+
+        /* Mobile menu glass effect */
+        @media (max-width: 991.98px) {
+            #mainNavbar .navbar-collapse {
+                background: rgba(30, 64, 175, 0.95);
+                backdrop-filter: blur(10px);
+                margin-top: 1rem;
+                padding: 1rem;
+                border-radius: 12px;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            }
+
+            #mainNavbar .navbar-collapse.collapsing {
+                transition: height 0.4s ease;
+            }
+
+            #mainNavbar .navbar-collapse .nav-link {
+                padding: 0.75rem 1rem;
+                border-radius: 8px;
+                transition: background 0.2s;
+                color: #ffffff !important;
+                font-weight: 500;
+            }
+
+            #mainNavbar .navbar-collapse .nav-link:hover {
+                background: rgba(255,255,255,0.15);
+                color: #ffffff !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolled" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="#">
+                <i class="bi bi-code-slash me-2"></i>SitiosChile
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#precios">Precios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero text-white">
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <span class="price-badge mb-4">Te Ayudamos a Crecer</span>
+                    <h1 class="display-4 fw-bold mb-4">
+                        Tu Negocio Merece Estar en Internet
+                    </h1>
+                    <p class="lead mb-4 opacity-90">
+                        Ayudamos a pequeños negocios a dar el salto digital.
+                        Te acompañamos en todo el proceso para que tengas tu página web profesional.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#contacto" class="btn btn-light btn-lg px-4 fw-semibold">
+                            Cotizar Gratis <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                        <a href="#servicios" class="btn btn-outline-light btn-lg px-4">
+                            Ver Servicios
+                        </a>
+                    </div>
+                    <div class="mt-5 d-flex gap-4 flex-wrap">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-warning me-2"></i>
+                            <span>Entrega Rápida</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-warning me-2"></i>
+                            <span>Soporte Incluido</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-warning me-2"></i>
+                            <span>Diseño Responsive</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block text-center">
+                    <img src="https://illustrations.popsy.co/blue/web-design.svg" alt="Diseño Web Chile" class="img-fluid" style="max-width: 500px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title display-6 mb-3">Nuestros Servicios</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">
+                    Soluciones web completas para emprendedores, pymes y empresas en todo Chile
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card shadow-sm p-4">
+                        <div class="service-icon">
+                            <i class="bi bi-palette"></i>
+                        </div>
+                        <h4 class="fw-bold">Diseño Web</h4>
+                        <p class="text-muted">Páginas web modernas, atractivas y profesionales que representan tu marca.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card shadow-sm p-4">
+                        <div class="service-icon">
+                            <i class="bi bi-phone"></i>
+                        </div>
+                        <h4 class="fw-bold">100% Responsive</h4>
+                        <p class="text-muted">Tu sitio se verá perfecto en celulares, tablets y computadores.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card shadow-sm p-4">
+                        <div class="service-icon">
+                            <i class="bi bi-search"></i>
+                        </div>
+                        <h4 class="fw-bold">SEO Optimizado</h4>
+                        <p class="text-muted">Aparecer en Google es fundamental. Optimizamos tu web para buscadores.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card shadow-sm p-4">
+                        <div class="service-icon">
+                            <i class="bi bi-cart3"></i>
+                        </div>
+                        <h4 class="fw-bold">Tiendas Online</h4>
+                        <p class="text-muted">E-commerce con carrito de compras, pagos online y gestión de productos.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card shadow-sm p-4">
+                        <div class="service-icon">
+                            <i class="bi bi-lightning"></i>
+                        </div>
+                        <h4 class="fw-bold">Carga Rápida</h4>
+                        <p class="text-muted">Sitios web optimizados para cargar en segundos y no perder visitantes.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card shadow-sm p-4">
+                        <div class="service-icon">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <h4 class="fw-bold">Soporte Continuo</h4>
+                        <p class="text-muted">Te acompañamos después de la entrega con soporte técnico incluido.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="precios" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title display-6 mb-3">Precio Transparente</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">
+                    Sin costos ocultos ni sorpresas. Conversemos sobre lo que necesitas.
+                </p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card pricing-card featured p-4 position-relative">
+                        <span class="pricing-badge">Página Web Profesional</span>
+                        <div class="card-body text-center">
+                            <div class="mb-4 mt-3">
+                                <span class="text-muted">Desde</span>
+                                <div>
+                                    <span class="display-4 fw-bold">$20.000</span>
+                                    <span class="text-muted">CLP</span>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-4">Ideal para pequeños negocios que quieren dar el salto a internet</p>
+                            <ul class="list-unstyled text-start mb-4">
+                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Diseño moderno y profesional</li>
+                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Adaptable a celulares y tablets</li>
+                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Formulario de contacto</li>
+                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Integración con WhatsApp</li>
+                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Enlaces a redes sociales</li>
+                                <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Soporte post-entrega incluido</li>
+                            </ul>
+                            <a href="#contacto" class="btn btn-primary w-100 py-3">Conversemos sobre tu proyecto</a>
+                            <p class="text-muted mt-3 mb-0 small">
+                                <i class="bi bi-info-circle me-1"></i>
+                                ¿Necesitas algo más específico? Conversemos y adaptamos el proyecto a tus necesidades.
+                            </p>
+                            <p class="text-muted mt-2 mb-0 small">
+                                <i class="bi bi-asterisk me-1"></i>
+                                No incluye dominio personalizado ni hosting. Consulta por opciones.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title display-6 mb-4">¿Por qué elegirnos?</h2>
+                    <div class="d-flex mb-4">
+                        <div class="me-3">
+                            <div class="bg-primary bg-opacity-10 rounded-circle p-3">
+                                <i class="bi bi-people text-primary fs-4"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Apoyo a Pequeños Negocios</h5>
+                            <p class="text-muted mb-0">Nos especializamos en ayudar a emprendedores y pymes a tener presencia online.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="me-3">
+                            <div class="bg-primary bg-opacity-10 rounded-circle p-3">
+                                <i class="bi bi-headset text-primary fs-4"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Acompañamiento Continuo</h5>
+                            <p class="text-muted mb-0">No te dejamos solo. Te guiamos antes, durante y después del proyecto.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="me-3">
+                            <div class="bg-primary bg-opacity-10 rounded-circle p-3">
+                                <i class="bi bi-chat-heart text-primary fs-4"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Trato Personalizado</h5>
+                            <p class="text-muted mb-0">Escuchamos tus necesidades y adaptamos la solución a tu negocio.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="me-3">
+                            <div class="bg-primary bg-opacity-10 rounded-circle p-3">
+                                <i class="bi bi-shield-check text-primary fs-4"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Garantía de Satisfacción</h5>
+                            <p class="text-muted mb-0">Trabajamos hasta que quedes conforme con tu página web.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-light rounded-4 p-5 text-center">
+                        <div class="display-1 fw-bold text-primary mb-3">+200</div>
+                        <p class="lead text-muted mb-0">Pequeños negocios que ya tienen su página web</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5 text-white">
+        <div class="container py-5 text-center">
+            <h2 class="display-6 fw-bold mb-4">¿Tu negocio aún no tiene página web?</h2>
+            <p class="lead mb-4 opacity-90">Conversemos sobre cómo podemos ayudarte. Sin compromiso.</p>
+            <a href="#contacto" class="btn btn-light btn-lg px-5 fw-semibold">
+                Conversemos <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <h2 class="section-title display-6 mb-4">Contáctanos</h2>
+                    <p class="text-muted mb-4">
+                        Cuéntanos sobre tu proyecto y te enviaremos una cotización personalizada sin costo.
+                    </p>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-envelope text-primary fs-4 me-3"></i>
+                        <div>
+                            <small class="text-muted d-block">Email</small>
+                            <strong>inf.carlos@outlook.com</strong>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-geo-alt text-danger fs-4 me-3"></i>
+                        <div>
+                            <small class="text-muted d-block">Ubicación</small>
+                            <strong>Chile</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <form id="contactForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Nombre</label>
+                                        <input type="text" id="nombre" class="form-control" placeholder="Tu nombre" required="">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" id="email" class="form-control" placeholder="tu@email.com" required="">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">¿Qué tipo de página necesitas?</label>
+                                        <select id="tipo" class="form-select">
+                                            <option selected="">Selecciona una opción</option>
+                                            <option>Landing Page</option>
+                                            <option>Sitio Web Corporativo</option>
+                                            <option>Tienda Online</option>
+                                            <option>Portfolio</option>
+                                            <option>Otro</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Mensaje</label>
+                                        <textarea id="mensaje" class="form-control" rows="4" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" id="submitBtn" class="btn btn-primary w-100 py-3">
+                                            Enviar Cotización <i class="bi bi-send ms-2"></i>
+                                        </button>
+                                    </div>
+                                    <div id="formMessage" class="col-12 d-none">
+                                        <div class="alert mb-0"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <span class="fw-bold"><i class="bi bi-code-slash me-2"></i>SitiosChile</span>
+                    <span class="ms-3 opacity-75">© 2025 Todos los derechos reservados</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-linkedin fs-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Navbar background on scroll -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNavbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Form submission to Google Sheets
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyHKUXtUPjtF8_n8A5EC2tsXDUuwWMJPwF9pDRcRe5hT0uxoebg8mW4CtXyMJ8Wbj4T/exec';
+
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const btn = document.getElementById('submitBtn');
+            const msgDiv = document.getElementById('formMessage');
+            const alert = msgDiv.querySelector('.alert');
+
+            // Disable button and show loading
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Enviando...';
+
+            const data = {
+                nombre: document.getElementById('nombre').value,
+                email: document.getElementById('email').value,
+                tipo: document.getElementById('tipo').value,
+                mensaje: document.getElementById('mensaje').value
+            };
+
+            try {
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                // Show success message
+                msgDiv.classList.remove('d-none');
+                alert.className = 'alert alert-success mb-0';
+                alert.innerHTML = '<i class="bi bi-check-circle me-2"></i>¡Mensaje enviado! Te contactaremos pronto.';
+
+                // Reset form
+                document.getElementById('contactForm').reset();
+
+            } catch (error) {
+                msgDiv.classList.remove('d-none');
+                alert.className = 'alert alert-danger mb-0';
+                alert.innerHTML = '<i class="bi bi-x-circle me-2"></i>Error al enviar. Intenta de nuevo o escríbenos directamente.';
+            }
+
+            // Restore button
+            btn.disabled = false;
+            btn.innerHTML = 'Enviar Cotización <i class="bi bi-send ms-2"></i>';
+
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                msgDiv.classList.add('d-none');
+            }, 5000);
+        });
+    </script>
+
+
+</body></html>

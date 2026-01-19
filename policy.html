@@ -1,0 +1,551 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy &amp; Terms of Service - ZooMinder</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&amp;family=Montserrat:wght@400&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: #E0E0E0;
+            background-color: #0a0e27;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px;
+            background-color: #1a2244;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #00bcd4, #4db6ac);
+            color: white;
+            border-radius: 16px 16px 0 0;
+            margin: -24px -24px 32px -24px;
+        }
+
+        .header h1 {
+            font-size: 2.4em;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .header .app-name {
+            font-size: 1.2em;
+            font-weight: 400;
+            opacity: 0.95;
+            margin-bottom: 12px;
+        }
+
+        .last-updated {
+            font-size: 0.9em;
+            opacity: 0.85;
+            font-style: italic;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #00bcd4;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: #4db6ac;
+        }
+
+        section {
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            color: #4db6ac;
+            font-size: 1.35em;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #00bcd4;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            color: #4db6ac;
+            font-size: 1.1em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 14px;
+            text-align: justify;
+            color: #b0b8d4;
+        }
+
+        ul {
+            margin: 14px 0;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #b0b8d4;
+        }
+
+        .highlight-box {
+            background-color: #151b3d;
+            border-left: 4px solid #4db6ac;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+        }
+
+        .plan-box {
+            background-color: #151b3d;
+            border: 1px solid #333;
+            padding: 20px;
+            margin: 12px 0;
+            border-radius: 12px;
+            transition: border-color 0.2s;
+        }
+
+        .plan-box.free {
+            border-color: #666;
+        }
+
+        .plan-box.premium {
+            border-color: #4db6ac;
+            background: linear-gradient(135deg, #151b3d, #1a2f2d);
+        }
+
+        .plan-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .plan-title h3 {
+            margin: 0;
+            color: #E0E0E0;
+        }
+
+        .warning-box {
+            background-color: #3d2c2c;
+            border-left: 4px solid #e57373;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h3 {
+            color: #e57373;
+            margin-top: 0;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #151b3d, #1a2244);
+            border: 1px solid #4db6ac;
+            padding: 24px;
+            border-radius: 12px;
+            margin-top: 24px;
+        }
+
+        strong {
+            color: #4db6ac;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid #333;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #00bcd4;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-left: 8px;
+        }
+
+        .badge.free {
+            background-color: #666;
+        }
+
+        .badge.premium {
+            background: linear-gradient(135deg, #00bcd4, #4db6ac);
+        }
+
+        .limits-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .limits-table th,
+        .limits-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        .limits-table th {
+            background-color: #00bcd4;
+            color: white;
+            font-weight: 600;
+        }
+
+        .limits-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .limits-table tr:nth-child(even) {
+            background-color: #151b3d;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00bcd4, transparent);
+            margin: 40px 0;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 16px 12px;
+                padding: 16px;
+                border-radius: 12px;
+            }
+
+            .header {
+                margin: -16px -16px 24px -16px;
+                padding: 32px 16px;
+                border-radius: 12px 12px 0 0;
+            }
+
+            .header h1 {
+                font-size: 1.9em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            .limits-table th,
+            .limits-table td {
+                padding: 10px 12px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <div class="header">
+            <h1>Privacy Policy &amp; Terms of Service</h1>
+            <div class="app-name">ZooMinder</div>
+            <div class="last-updated">Last updated: December 18, 2025</div>
+        </div>
+
+        <!-- PRIVACY POLICY -->
+        <section>
+            <h2>1. Introduction</h2>
+            <p>ZooMinder ("we", "our", "the app") is a subscription-based mobile application designed to help pet owners
+                manage their pet profiles and medication schedules. We are committed to protecting your privacy and
+                ensuring the security of your personal information.</p>
+        </section>
+
+        <section>
+            <h2>2. App Functionality</h2>
+
+            <h3>Pet Management</h3>
+            <p>Our application allows you to:</p>
+            <ul>
+                <li><strong>Register pet profiles</strong>: Store information about your pets including name, species,
+                    breed, age, and photos</li>
+                <li><strong>Track medications</strong>: Manage medication schedules, dosages, and frequencies for each
+                    pet</li>
+                <li><strong>Set reminders</strong>: Receive notifications for medication times</li>
+                <li><strong>Cloud synchronization</strong>: Securely sync your data across devices (Premium only)</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>Secure Cloud Storage <span class="badge">Encrypted</span></h3>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>Encrypted data</strong>: All your data is encrypted in transit and at rest</li>
+                    <li><strong>Account-based access</strong>: Your data is protected by secure authentication</li>
+                    <li><strong>Cross-device sync</strong>: Access your pet information from any device</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Information We Collect</h2>
+            <p>ZooMinder collects and stores the following information:</p>
+            <ul>
+                <li><strong>Account information</strong>: Email address for authentication and account recovery</li>
+                <li><strong>Pet information</strong>: Name, species, breed, age, and optional photos</li>
+                <li><strong>Medication data</strong>: Medication names, dosages, frequencies, and schedules</li>
+                <li><strong>Subscription data</strong>: Subscription status and billing information (processed by app
+                    stores)</li>
+                <li><strong>Usage data</strong>: App usage patterns to improve our service and detect abuse</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. How We Use Information</h2>
+            <p>The information collected is used to:</p>
+            <ul>
+                <li>Provide and maintain the ZooMinder service</li>
+                <li>Sync your pet profiles and medication schedules across devices</li>
+                <li>Send medication reminders and notifications</li>
+                <li>Process and manage your subscription</li>
+                <li>Detect and prevent abuse of the service</li>
+                <li>Improve our app and user experience</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. Data Storage &amp; Security</h2>
+            <ul>
+                <li><strong>Secure cloud storage</strong>: Data is stored on secure, encrypted servers</li>
+                <li><strong>Encryption</strong>: All data is encrypted in transit (TLS) and at rest (AES-256)</li>
+                <li><strong>Authentication</strong>: Protected by secure authentication protocols</li>
+                <li><strong>No third-party sharing</strong>: We never sell or share your personal data with third
+                    parties</li>
+                <li><strong>Data retention</strong>: Your data is retained while your account is active and deleted upon
+                    request</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>6. Permissions</h2>
+            <p>ZooMinder may request the following device permissions:</p>
+            <ul>
+                <li><strong>Camera/Photo Library</strong>: To add photos of your pets (optional)</li>
+                <li><strong>Notifications</strong>: To send medication reminders (optional)</li>
+                <li><strong>Internet</strong>: To sync data and process subscriptions</li>
+            </ul>
+        </section>
+
+        <hr class="divider">
+
+        <!-- TERMS OF SERVICE -->
+        <section id="terms">
+            <h2>7. Subscription Plans</h2>
+            <p>ZooMinder offers the following subscription plans:</p>
+
+            <div class="plan-box free">
+                <div class="plan-title">
+                    <h3>Free Plan</h3>
+                    <span class="badge free">Free Forever</span>
+                </div>
+                <p style="margin-bottom: 8px;">Try ZooMinder with limited features:</p>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>1 pet profile</strong></li>
+                    <li><strong>1 medication</strong> per pet</li>
+                    <li>Basic medication reminders</li>
+                    <li>Local storage only (no cloud sync)</li>
+                </ul>
+            </div>
+
+            <div class="plan-box premium">
+                <div class="plan-title">
+                    <h3>Premium Plan</h3>
+                    <span class="badge premium">Monthly Subscription</span>
+                </div>
+                <p style="margin-bottom: 8px;">Unlock the full ZooMinder experience:</p>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>Unlimited pet profiles</strong></li>
+                    <li><strong>Unlimited medications</strong> per pet</li>
+                    <li>Advanced medication scheduling</li>
+                    <li>Cloud sync across all devices</li>
+                    <li>Medication history and reports</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Need more? <span class="badge">Enterprise</span></h3>
+                <p style="margin-bottom: 0;">If you need higher limits for professional use (veterinary clinics, pet
+                    care facilities, etc.), contact us at <strong>inf.carlos@outlook.com</strong> to discuss custom
+                    plans.</p>
+            </div>
+
+            <table class="limits-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Free</th>
+                        <th>Premium</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pet Profiles</td>
+                        <td>1</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td>Medications per Pet</td>
+                        <td>1</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td>Medication Reminders</td>
+                        <td>Basic</td>
+                        <td>Advanced</td>
+                    </tr>
+                    <tr>
+                        <td>Medication History</td>
+                        <td>7 days</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td>Cloud Sync</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>8. Billing &amp; Cancellation</h2>
+            <ul>
+                <li><strong>Subscription billing</strong>: Premium subscriptions are billed monthly through Google Play
+                </li>
+                <li><strong>Auto-renewal</strong>: Subscriptions automatically renew unless cancelled at least 24 hours
+                    before the end of the current period</li>
+                <li><strong>Cancellation</strong>: You may cancel your subscription at any time through Google Play
+                    settings</li>
+                <li><strong>Refunds</strong>: Refund requests are handled according to Google Play policies</li>
+                <li><strong>Downgrade</strong>: Upon cancellation, your account reverts to the Free plan at the end of
+                    the billing period</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>9. Acceptable Use Policy</h2>
+            <p>To ensure a fair experience for all users, the following usage limits and policies apply:</p>
+
+            <div class="warning-box">
+                <h3>Abuse Prevention</h3>
+                <p style="margin-bottom: 8px;">We reserve the right to suspend or terminate accounts that:</p>
+                <ul style="margin-bottom: 0;">
+                    <li>Attempt to circumvent subscription limits through multiple accounts</li>
+                    <li>Use automated tools or bots to interact with the service</li>
+                    <li>Share account credentials with others</li>
+                    <li>Engage in any activity that disrupts or burdens our infrastructure</li>
+                    <li>Violate these Terms of Service</li>
+                </ul>
+            </div>
+
+            <p><strong>Fair Use Policy:</strong> Premium accounts include unlimited pets and medications. However,
+                accounts with more than 50 pets or more than 500 total medications may be subject to verification to
+                ensure compliance with our terms and prevent automated or commercial abuse. If you have legitimate
+                professional use requiring these higher volumes (veterinary clinics, pet care facilities, etc.), please
+                contact us at <strong>inf.carlos@outlook.com</strong> to verify your account.</p>
+
+            <p><strong>Account Responsibility:</strong> You are responsible for maintaining the security of your account
+                credentials and for all activities under your account.</p>
+        </section>
+
+        <section>
+            <h2>10. Your Rights</h2>
+            <p>You have the following rights regarding your data:</p>
+            <ul>
+                <li><strong>Access</strong>: View all your data directly in the app</li>
+                <li><strong>Modify</strong>: Edit or update any information at any time</li>
+                <li><strong>Delete</strong>: Remove any pet profile or medication record</li>
+                <li><strong>Export</strong>: Request a copy of your data</li>
+                <li><strong>Account deletion</strong>: Request complete deletion of your account and all associated data
+                </li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>Account Deletion</h3>
+                <p style="margin-bottom: 8px;">You have the right to request permanent deletion of your account at any
+                    time. To delete your account:</p>
+                <ul style="margin-bottom: 0;">
+                    <li>Send an email to <strong>inf.carlos@outlook.com</strong> with the subject "Account Deletion
+                        Request"</li>
+                    <li>Include your registered email address in the request</li>
+                    <li>Your account and all associated data (pets, medications, history) will be permanently deleted
+                        within 30 days</li>
+                    <li>This action is irreversible and cannot be undone</li>
+                    <li>If you have an active subscription, it will be cancelled automatically</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>11. Children's Privacy</h2>
+            <p>ZooMinder is not intended for use by children under 13 years of age. We do not knowingly collect personal
+                information from children under 13. If you are a parent or guardian and believe your child has provided
+                us with personal information, please contact us.</p>
+        </section>
+
+        <section>
+            <h2>12. Changes to Terms</h2>
+            <p>We may update these terms from time to time. We will notify you of any material changes by posting the
+                new terms in the app and updating the "Last updated" date. Your continued use of the app after such
+                changes constitutes acceptance of the new terms.</p>
+        </section>
+
+        <section>
+            <h2>13. Contact Us</h2>
+            <div class="contact-info">
+                <p>If you have any questions about this Privacy Policy, Terms of Service, or your subscription, please
+                    contact us:</p>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>Email</strong>: inf.carlos@outlook.com</li>
+                    <li><strong>Developer</strong>: Codiva® (Registered Trademark No. 1481622, Chile)</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="footer">
+            <p>By using ZooMinder, you agree to these Terms of Service and Privacy Policy.</p>
+            <p style="margin-top: 12px; color: #4db6ac;">© 2025 ZooMinder by Codiva®. All rights reserved.</p>
+            <p style="font-size: 0.85em; opacity: 0.7; margin-top: 8px;">Codiva® is a registered trademark in
+                Chile<br>Registration No. 1481622 | INAPI Chile</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

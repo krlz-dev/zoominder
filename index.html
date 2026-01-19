@@ -1,0 +1,1273 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZooMinder - Never Miss Your Pet's Medication Again</title>
+    <meta name="description" content="ZooMinder helps pet owners manage medications and treatments with smart reminders, tracking, and premium features for multiple pets.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&amp;family=Montserrat:wght@400&amp;display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --dark-bg: #0a0e27;
+            --dark-secondary: #151b3d;
+            --dark-card: #1a2244;
+            --teal-primary: #00bcd4;
+            --teal-secondary: #4db6ac;
+            --teal-light: #80deea;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b8d4;
+            --gradient: linear-gradient(135deg, #00bcd4 0%, #4db6ac 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Particle Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: var(--dark-bg);
+            overflow: hidden;
+        }
+
+        .animated-bg::before,
+        .animated-bg::after {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 3em;
+            height: 3em;
+            content: '.';
+            font-size: 52px;
+            color: transparent;
+            mix-blend-mode: screen;
+            animation: 44s -27s particleMove infinite ease-in-out alternate;
+        }
+
+        .animated-bg::before {
+            text-shadow:
+                -0.2em 1.8em 7px hsla(180, 100%, 50%, 0.9),
+                2.1em -0.9em 7px hsla(175, 100%, 50%, 0.9),
+                -1.4em -1.2em 7px hsla(185, 100%, 50%, 0.9),
+                0.8em 2.3em 7px hsla(170, 100%, 50%, 0.9),
+                2.5em 0.4em 7px hsla(190, 100%, 50%, 0.9),
+                -2.1em 0.7em 7px hsla(178, 100%, 50%, 0.9),
+                1.3em -2.2em 7px hsla(182, 100%, 50%, 0.9),
+                -0.6em 2.7em 7px hsla(188, 100%, 50%, 0.9),
+                2.8em 1.1em 7px hsla(172, 100%, 50%, 0.9),
+                -2.4em -0.3em 7px hsla(186, 100%, 50%, 0.9),
+                0.3em -2.5em 7px hsla(176, 100%, 50%, 0.9),
+                2.2em 1.9em 7px hsla(184, 100%, 50%, 0.9),
+                -1.7em 2.1em 7px hsla(174, 100%, 50%, 0.9),
+                1.9em -1.4em 7px hsla(181, 100%, 50%, 0.9),
+                -2.7em 1.3em 7px hsla(179, 100%, 50%, 0.9),
+                0.1em 1.2em 7px hsla(187, 100%, 50%, 0.9),
+                2.6em -1.8em 7px hsla(173, 100%, 50%, 0.9),
+                -1.1em -2.4em 7px hsla(183, 100%, 50%, 0.9),
+                1.5em 2.6em 7px hsla(177, 100%, 50%, 0.9),
+                -2.3em -1.7em 7px hsla(189, 100%, 50%, 0.9),
+                2.9em 0.8em 7px hsla(171, 100%, 50%, 0.9),
+                -0.4em -1.9em 7px hsla(185, 100%, 50%, 0.9),
+                1.7em 1.4em 7px hsla(175, 100%, 50%, 0.9),
+                -2.6em 2.2em 7px hsla(180, 100%, 50%, 0.9),
+                0.9em -2.7em 7px hsla(188, 100%, 50%, 0.9),
+                2.4em 2.1em 7px hsla(172, 100%, 50%, 0.9),
+                -1.8em 0.2em 7px hsla(186, 100%, 50%, 0.9),
+                1.2em -1.3em 7px hsla(176, 100%, 50%, 0.9),
+                -2.2em -2.8em 7px hsla(184, 100%, 50%, 0.9),
+                2.7em 1.6em 7px hsla(174, 100%, 50%, 0.9),
+                -0.7em 2.4em 7px hsla(181, 100%, 50%, 0.9),
+                1.4em -0.1em 7px hsla(179, 100%, 50%, 0.9),
+                -2.5em 1.8em 7px hsla(187, 100%, 50%, 0.9),
+                0.6em -2.1em 7px hsla(173, 100%, 50%, 0.9),
+                2.3em -0.6em 7px hsla(183, 100%, 50%, 0.9),
+                -1.3em 2.9em 7px hsla(177, 100%, 50%, 0.9),
+                1.8em 0.7em 7px hsla(189, 100%, 50%, 0.9),
+                -2.8em -1.1em 7px hsla(171, 100%, 50%, 0.9),
+                0.2em 1.7em 7px hsla(185, 100%, 50%, 0.9),
+                2.1em -2.3em 7px hsla(175, 100%, 50%, 0.9);
+            animation-duration: 44s;
+            animation-delay: -27s;
+        }
+
+        .animated-bg::after {
+            text-shadow:
+                1.9em 0.3em 7px hsla(182, 100%, 50%, 0.9),
+                -1.2em 2.7em 7px hsla(178, 100%, 50%, 0.9),
+                2.4em -1.5em 7px hsla(186, 100%, 50%, 0.9),
+                -2.7em -0.8em 7px hsla(174, 100%, 50%, 0.9),
+                0.5em 2.1em 7px hsla(190, 100%, 50%, 0.9),
+                2.8em 1.4em 7px hsla(170, 100%, 50%, 0.9),
+                -1.6em -2.2em 7px hsla(184, 100%, 50%, 0.9),
+                1.1em 2.5em 7px hsla(176, 100%, 50%, 0.9),
+                -2.3em 1.9em 7px hsla(188, 100%, 50%, 0.9),
+                2.6em -0.4em 7px hsla(172, 100%, 50%, 0.9),
+                -0.9em -2.6em 7px hsla(180, 100%, 50%, 0.9),
+                1.7em 1.2em 7px hsla(185, 100%, 50%, 0.9),
+                -2.1em -1.7em 7px hsla(175, 100%, 50%, 0.9),
+                0.8em 2.9em 7px hsla(189, 100%, 50%, 0.9),
+                2.2em 0.1em 7px hsla(171, 100%, 50%, 0.9),
+                -2.5em 2.3em 7px hsla(183, 100%, 50%, 0.9),
+                1.4em -1.9em 7px hsla(177, 100%, 50%, 0.9),
+                -1.8em 0.6em 7px hsla(187, 100%, 50%, 0.9),
+                2.9em -2.4em 7px hsla(173, 100%, 50%, 0.9),
+                -0.3em 1.5em 7px hsla(181, 100%, 50%, 0.9),
+                1.6em -0.7em 7px hsla(179, 100%, 50%, 0.9),
+                -2.4em -2.1em 7px hsla(186, 100%, 50%, 0.9),
+                2.7em 2.8em 7px hsla(174, 100%, 50%, 0.9),
+                -1.1em 1.3em 7px hsla(190, 100%, 50%, 0.9),
+                0.4em -2.9em 7px hsla(170, 100%, 50%, 0.9),
+                2.1em 1.8em 7px hsla(184, 100%, 50%, 0.9),
+                -2.6em -0.2em 7px hsla(176, 100%, 50%, 0.9),
+                1.3em 2.4em 7px hsla(188, 100%, 50%, 0.9),
+                -1.5em -1.3em 7px hsla(172, 100%, 50%, 0.9),
+                2.5em 0.9em 7px hsla(180, 100%, 50%, 0.9),
+                -2.8em 2.6em 7px hsla(185, 100%, 50%, 0.9),
+                0.7em -1.1em 7px hsla(175, 100%, 50%, 0.9),
+                2.3em -2.8em 7px hsla(189, 100%, 50%, 0.9),
+                -1.4em 2.2em 7px hsla(171, 100%, 50%, 0.9),
+                1.8em -0.5em 7px hsla(183, 100%, 50%, 0.9),
+                -2.2em 1.7em 7px hsla(177, 100%, 50%, 0.9),
+                0.1em -2.3em 7px hsla(187, 100%, 50%, 0.9),
+                2.4em 2.1em 7px hsla(173, 100%, 50%, 0.9),
+                -2.9em -1.6em 7px hsla(181, 100%, 50%, 0.9),
+                1.2em 0.8em 7px hsla(179, 100%, 50%, 0.9);
+            animation-duration: 43s;
+            animation-delay: -32s;
+        }
+
+        .liquid-blob {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 3em;
+            height: 3em;
+            font-size: 52px;
+            color: transparent;
+            mix-blend-mode: screen;
+        }
+
+        .blob-1 {
+            text-shadow:
+                0.7em 2.2em 7px hsla(181, 100%, 50%, 0.9),
+                -2.1em -0.4em 7px hsla(177, 100%, 50%, 0.9),
+                2.5em 1.8em 7px hsla(185, 100%, 50%, 0.9),
+                -1.3em 2.6em 7px hsla(173, 100%, 50%, 0.9),
+                1.9em -1.7em 7px hsla(189, 100%, 50%, 0.9),
+                -2.7em 0.9em 7px hsla(169, 100%, 50%, 0.9),
+                0.3em -2.3em 7px hsla(183, 100%, 50%, 0.9),
+                2.8em -0.1em 7px hsla(175, 100%, 50%, 0.9),
+                -1.6em 1.4em 7px hsla(187, 100%, 50%, 0.9),
+                1.2em 2.9em 7px hsla(171, 100%, 50%, 0.9),
+                -2.4em -1.9em 7px hsla(179, 100%, 50%, 0.9),
+                2.2em 0.5em 7px hsla(184, 100%, 50%, 0.9),
+                -0.8em -2.7em 7px hsla(176, 100%, 50%, 0.9),
+                1.5em 1.1em 7px hsla(188, 100%, 50%, 0.9),
+                -2.9em 2.4em 7px hsla(172, 100%, 50%, 0.9),
+                0.6em -1.2em 7px hsla(180, 100%, 50%, 0.9),
+                2.7em -2.6em 7px hsla(186, 100%, 50%, 0.9),
+                -1.9em 0.2em 7px hsla(174, 100%, 50%, 0.9),
+                1.4em -2.1em 7px hsla(190, 100%, 50%, 0.9),
+                -2.2em 1.7em 7px hsla(170, 100%, 50%, 0.9),
+                2.6em 2.3em 7px hsla(182, 100%, 50%, 0.9),
+                -0.5em 2.8em 7px hsla(178, 100%, 50%, 0.9),
+                1.8em -0.6em 7px hsla(185, 100%, 50%, 0.9),
+                -2.5em -2.4em 7px hsla(175, 100%, 50%, 0.9),
+                0.9em 1.6em 7px hsla(189, 100%, 50%, 0.9),
+                2.3em -1.8em 7px hsla(171, 100%, 50%, 0.9),
+                -1.7em -0.9em 7px hsla(183, 100%, 50%, 0.9),
+                1.1em 2.5em 7px hsla(177, 100%, 50%, 0.9),
+                -2.8em 0.4em 7px hsla(187, 100%, 50%, 0.9),
+                2.4em 1.3em 7px hsla(173, 100%, 50%, 0.9),
+                -1.2em -2.2em 7px hsla(181, 100%, 50%, 0.9),
+                0.2em 2.1em 7px hsla(179, 100%, 50%, 0.9),
+                2.9em -1.4em 7px hsla(186, 100%, 50%, 0.9),
+                -2.3em 2.7em 7px hsla(174, 100%, 50%, 0.9),
+                1.6em 0.8em 7px hsla(190, 100%, 50%, 0.9),
+                -0.4em -1.5em 7px hsla(170, 100%, 50%, 0.9),
+                2.1em -2.9em 7px hsla(184, 100%, 50%, 0.9),
+                -2.6em 1.2em 7px hsla(176, 100%, 50%, 0.9),
+                1.3em 2.6em 7px hsla(188, 100%, 50%, 0.9),
+                -1.8em -1.1em 7px hsla(172, 100%, 50%, 0.9);
+            animation: 42s -23s particleMove infinite ease-in-out alternate;
+        }
+
+        .blob-2 {
+            text-shadow:
+                -1.4em 2.3em 7px hsla(180, 100%, 50%, 0.9),
+                2.6em -0.7em 7px hsla(185, 100%, 50%, 0.9),
+                -2.8em 1.5em 7px hsla(175, 100%, 50%, 0.9),
+                0.9em -2.4em 7px hsla(189, 100%, 50%, 0.9),
+                2.2em 2.1em 7px hsla(171, 100%, 50%, 0.9),
+                -1.7em -1.8em 7px hsla(183, 100%, 50%, 0.9),
+                1.3em 2.7em 7px hsla(177, 100%, 50%, 0.9),
+                -2.5em -0.3em 7px hsla(187, 100%, 50%, 0.9),
+                2.9em 1.9em 7px hsla(173, 100%, 50%, 0.9),
+                -0.6em 0.4em 7px hsla(181, 100%, 50%, 0.9),
+                1.8em -1.2em 7px hsla(179, 100%, 50%, 0.9),
+                -2.3em 2.6em 7px hsla(186, 100%, 50%, 0.9),
+                0.5em -2.9em 7px hsla(174, 100%, 50%, 0.9),
+                2.7em 0.8em 7px hsla(190, 100%, 50%, 0.9),
+                -1.9em 1.7em 7px hsla(170, 100%, 50%, 0.9),
+                1.4em -0.1em 7px hsla(184, 100%, 50%, 0.9),
+                -2.1em -2.5em 7px hsla(176, 100%, 50%, 0.9),
+                2.4em 2.8em 7px hsla(188, 100%, 50%, 0.9),
+                -0.8em 1.2em 7px hsla(172, 100%, 50%, 0.9),
+                1.6em -2.2em 7px hsla(180, 100%, 50%, 0.9),
+                -2.7em 0.6em 7px hsla(185, 100%, 50%, 0.9),
+                2.1em 1.4em 7px hsla(175, 100%, 50%, 0.9),
+                -1.3em -1.6em 7px hsla(189, 100%, 50%, 0.9),
+                0.7em 2.5em 7px hsla(171, 100%, 50%, 0.9),
+                2.5em -1.9em 7px hsla(183, 100%, 50%, 0.9),
+                -2.2em -0.5em 7px hsla(177, 100%, 50%, 0.9),
+                1.1em 2.9em 7px hsla(187, 100%, 50%, 0.9),
+                -2.9em 2.3em 7px hsla(173, 100%, 50%, 0.9),
+                0.3em -1.7em 7px hsla(181, 100%, 50%, 0.9),
+                2.8em 0.2em 7px hsla(179, 100%, 50%, 0.9),
+                -1.5em 1.8em 7px hsla(186, 100%, 50%, 0.9),
+                1.9em -2.6em 7px hsla(174, 100%, 50%, 0.9),
+                -2.4em -1.3em 7px hsla(190, 100%, 50%, 0.9),
+                2.3em 2.4em 7px hsla(170, 100%, 50%, 0.9),
+                -0.4em 0.9em 7px hsla(184, 100%, 50%, 0.9),
+                1.7em -0.8em 7px hsla(176, 100%, 50%, 0.9),
+                -2.6em 2.7em 7px hsla(188, 100%, 50%, 0.9),
+                0.8em -2.1em 7px hsla(172, 100%, 50%, 0.9),
+                2.6em 1.6em 7px hsla(180, 100%, 50%, 0.9),
+                -1.8em -2.8em 7px hsla(185, 100%, 50%, 0.9);
+            animation: 41s -19s particleMove infinite ease-in-out alternate;
+        }
+
+        .blob-3 {
+            content: '.';
+        }
+
+        @keyframes particleMove {
+            from {
+                transform: rotate(0deg) scale(12) translateX(-20px);
+            }
+            to {
+                transform: rotate(360deg) scale(18) translateX(20px);
+            }
+        }
+
+        /* Navigation - Glassmorphism */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            background: rgba(10, 14, 39, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 188, 212, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 5% 4rem;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .gradient-text {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 188, 212, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 188, 212, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(0, 188, 212, 0.1);
+            color: var(--teal-primary);
+            border: 2px solid var(--teal-primary);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 188, 212, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 50%;
+            height: auto;
+            filter: drop-shadow(0 20px 60px rgba(0, 188, 212, 0.3));
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 5%;
+            background: var(--dark-secondary);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            justify-items: center;
+        }
+
+        .feature-card {
+            background: rgba(26, 34, 68, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 188, 212, 0.2);
+            transition: all 0.3s;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(26, 34, 68, 0.8);
+            border-color: var(--teal-primary);
+            box-shadow: 0 20px 40px rgba(0, 188, 212, 0.3);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Premium Section */
+        .premium {
+            padding: 6rem 5%;
+            background: var(--dark-bg);
+        }
+
+        .premium-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(26, 34, 68, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-radius: 30px;
+            padding: 4rem;
+            border: 2px solid rgba(0, 188, 212, 0.4);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 60px rgba(0, 188, 212, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 188, 212, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .premium-badge {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .premium-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .premium-container p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .premium-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .premium-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .premium-item i {
+            color: var(--teal-primary);
+            font-size: 1.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .premium-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .premium-item p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 6rem 5%;
+            background: var(--dark-secondary);
+        }
+
+        .steps {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            background: rgba(26, 34, 68, 0.4);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 188, 212, 0.1);
+            transition: all 0.3s;
+        }
+
+        .step:hover {
+            background: rgba(26, 34, 68, 0.6);
+            border-color: rgba(0, 188, 212, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .step p {
+            color: var(--text-secondary);
+        }
+
+        /* Phone Mockups */
+        .phones-showcase {
+            max-width: 1200px;
+            margin: 4rem auto 0;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .phone-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .phone {
+            --black5: #1a2244;
+            --black4: #0a0e27;
+
+            z-index: 1;
+            width: 13rem;
+            height: 24rem;
+            padding: 0 0.5rem;
+            border: 0.25rem solid var(--black5);
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            background-color: #e0e0e0;
+            box-shadow: 0 10px 40px rgba(0, 188, 212, 0.3);
+            transition: transform 0.3s;
+            margin-bottom: 1.5rem;
+        }
+
+        .phone:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 188, 212, 0.4);
+        }
+
+        .phone_mic {
+            height: 0.25rem;
+            width: 4rem;
+            margin: 1rem auto;
+            border-radius: 999rem;
+            background-color: var(--black4);
+        }
+
+        .phone_screen {
+            position: relative;
+            flex: 1 0 auto;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a2244 100%);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            gap: 0.75rem;
+        }
+
+        .screen-icon {
+            font-size: 3rem;
+            color: var(--teal-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .screen-element {
+            width: 80%;
+            height: 2.5rem;
+            background: rgba(0, 188, 212, 0.15);
+            border: 2px solid rgba(0, 188, 212, 0.3);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--teal-light);
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .screen-button {
+            width: 60%;
+            height: 2rem;
+            background: var(--gradient);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
+        }
+
+        .screen-pill {
+            width: 3rem;
+            height: 3rem;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 188, 212, 0.4);
+        }
+
+        .screen-notification {
+            width: 85%;
+            padding: 0.75rem;
+            background: rgba(0, 188, 212, 0.2);
+            border-left: 3px solid var(--teal-primary);
+            border-radius: 6px;
+            font-size: 0.65rem;
+            color: var(--text-primary);
+            text-align: left;
+        }
+
+        .phone_button {
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 2px solid var(--black4);
+            border-radius: 50%;
+            margin: 1rem auto;
+        }
+
+        .phone-label {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .phone-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 5%;
+            background: var(--dark-bg);
+            border-top: 1px solid rgba(0, 188, 212, 0.1);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--teal-primary);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .phones-showcase {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image img {
+                max-width: 300px;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .premium-container {
+                padding: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0">
+    <div class="animated-bg">
+        <div class="liquid-blob blob-1">.</div>
+        <div class="liquid-blob blob-2">.</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">ZooMinder</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="policy.html">Privacy</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content aos-init aos-animate" data-aos="fade-right">
+                <h1>
+                    Never Miss Your Pet's <span class="gradient-text">Medication</span>
+                </h1>
+                <p>
+ZooMinder helps you manage your pet's medications and treatments with smart reminders, detailed tracking, and premium features designed for pet parents who care.                </p>
+                <div class="cta-buttons">
+                    <a href="#early-access" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> Join the Beta
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image aos-init aos-animate" data-aos="fade-left">
+                <img src="intro.png" alt="ZooMinder - Pet Medication Reminder App">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-header aos-init aos-animate" data-aos="fade-up">
+            <h2>Simple <span class="gradient-text">Features</span> That Work</h2>
+            <p>Everything you need, nothing you don't</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <h3>Smart Reminders</h3>
+                <p>Get notified when it's time. No more forgetting.</p>
+            </div>
+
+            <div class="feature-card aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Easy Scheduling</h3>
+                <p>Daily, weekly, or custom times. You decide.</p>
+            </div>
+
+            <div class="feature-card aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Track History</h3>
+                <p>See what you gave and when. Perfect for vet visits.</p>
+            </div>
+
+            <div class="feature-card aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">
+                    <i class="fas fa-paw"></i>
+                </div>
+                <h3>Multiple Pets</h3>
+                <p>Manage all your pets in one place.</p>
+            </div>
+
+            <div class="feature-card aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3>Cloud Sync</h3>
+                <p>Access from any device. Always up to date.</p>
+            </div>
+
+            <div class="feature-card aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Secure & Private</h3>
+                <p>Your data is protected and private.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Section -->
+    <section id="premium" class="premium" style="display: none;">
+        <div class="premium-container aos-init aos-animate" data-aos="zoom-in">
+            <span class="premium-badge">Premium</span>
+            <h2>Upgrade for <span class="gradient-text">Unlimited</span> Everything</h2>
+            <p>Remove all limits. Manage as many pets and meds as you need.</p>
+
+            <div class="premium-features">
+                <div class="premium-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Unlimited Pets</h4>
+                        <p>Register and manage unlimited pet profiles</p>
+                    </div>
+                </div>
+
+                <div class="premium-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Unlimited Medications</h4>
+                        <p>Track unlimited medications for each pet</p>
+                    </div>
+                </div>
+
+                <div class="premium-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Advanced Notifications</h4>
+                        <p>Customizable alerts and reminder settings</p>
+                    </div>
+                </div>
+
+                <div class="premium-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Complete History</h4>
+                        <p>Unlimited access to medication history and reports</p>
+                    </div>
+                </div>
+
+                <div class="premium-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Cloud Sync</h4>
+                        <p>Sync your data securely across all your devices</p>
+                    </div>
+                </div>
+
+                <div class="premium-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Premium Support</h4>
+                        <p>Priority customer support when you need help</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="btn btn-primary">
+                <i class="fas fa-crown"></i> Upgrade to Premium
+            </a>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="section-header aos-init" data-aos="fade-up">
+            <h2>How It <span class="gradient-text">Works</span></h2>
+            <p>Three simple steps</p>
+        </div>
+
+        <!-- Phone Mockups -->
+        <div class="phones-showcase">
+            <div class="phone-wrapper" data-aos="fade-up" data-aos-delay="100">
+                <div class="phone">
+                    <div class="phone_mic"></div>
+                    <div class="phone_screen">
+                        <div class="screen-icon"><i class="fas fa-paw"></i></div>
+                        <div class="screen-element">Pet Name</div>
+                        <div class="screen-element">Photo</div>
+                        <div class="screen-button">Save Pet</div>
+                    </div>
+                    <div class="phone_button"></div>
+                </div>
+                <div class="phone-label">Add Your Pet</div>
+                <div class="phone-desc">Create a profile in seconds</div>
+            </div>
+
+            <div class="phone-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <div class="phone">
+                    <div class="phone_mic"></div>
+                    <div class="phone_screen">
+                        <div class="screen-pill"><i class="fas fa-pills"></i></div>
+                        <div class="screen-element">Medication</div>
+                        <div class="screen-element">Dosage</div>
+                        <div class="screen-element">Time</div>
+                        <div class="screen-button">Set Reminder</div>
+                    </div>
+                    <div class="phone_button"></div>
+                </div>
+                <div class="phone-label">Set Schedule</div>
+                <div class="phone-desc">Add meds and reminders</div>
+            </div>
+
+            <div class="phone-wrapper" data-aos="fade-up" data-aos-delay="300">
+                <div class="phone">
+                    <div class="phone_mic"></div>
+                    <div class="phone_screen">
+                        <div class="screen-icon"><i class="fas fa-bell"></i></div>
+                        <div class="screen-notification">
+                            <strong>Time for medication!</strong><br>
+                            Fluffy - Antibiotics
+                        </div>
+                        <div class="screen-notification">
+                            <strong>Reminder</strong><br>
+                            Max - Heart Med
+                        </div>
+                    </div>
+                    <div class="phone_button"></div>
+                </div>
+                <div class="phone-label">Track & Relax</div>
+                <div class="phone-desc">Never miss a dose</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Early Access Section -->
+    <section id="early-access" class="premium">
+        <div class="premium-container aos-init" data-aos="zoom-in">
+            <span class="premium-badge">Beta Program</span>
+            <h2>Join the <span class="gradient-text">Beta</span></h2>
+            <p>Get early access and help make ZooMinder better.</p>
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8">
+                    <div style="background: rgba(10, 14, 39, 0.4); backdrop-filter: blur(20px); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(0, 188, 212, 0.3);">
+                        <form id="earlyAccessForm">
+                            <div style="margin-bottom: 1.5rem;">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-primary);">
+                                    Email Address <span style="color: var(--teal-primary);">*</span>
+                                </label>
+                                <input type="email" id="userEmail" required style="width: 100%; padding: 0.75rem 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(0, 188, 212, 0.3); border-radius: 8px; color: var(--text-primary); font-size: 1rem;">
+                            </div>
+
+                            <div style="margin-bottom: 1.5rem;">
+                                <label style="display: block; margin-bottom: 0.75rem; font-weight: 500; color: var(--text-primary);">
+                                    Would you consider paying $2/month for ZooMinder? <span style="color: var(--teal-primary);">*</span>
+                                </label>
+                                <div style="display: flex; gap: 2rem; margin-top: 0.75rem;">
+                                    <label style="display: flex; align-items: center; cursor: pointer; color: var(--text-secondary);">
+                                        <input type="radio" name="willPay" value="Yes" required style="margin-right: 0.5rem; width: 18px; height: 18px; cursor: pointer;">
+                                        <span style="font-size: 1.1rem;">Yes</span>
+                                    </label>
+                                    <label style="display: flex; align-items: center; cursor: pointer; color: var(--text-secondary);">
+                                        <input type="radio" name="willPay" value="No" required style="margin-right: 0.5rem; width: 18px; height: 18px; cursor: pointer;">
+                                        <span style="font-size: 1.1rem;">No</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 1.5rem;">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-primary);">
+                                    Comments (Optional)
+                                </label>
+                                <textarea id="userComments" rows="4" placeholder="Any thoughts or questions?" style="width: 100%; padding: 0.75rem 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(0, 188, 212, 0.3); border-radius: 8px; color: var(--text-primary); font-size: 1rem; resize: vertical;"></textarea>
+                            </div>
+
+                            <div id="formMessage" style="display: none; margin-bottom: 1rem;">
+                                <div style="padding: 1rem; border-radius: 8px;"></div>
+                            </div>
+
+                            <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
+                                <i class="fas fa-paper-plane"></i> Count Me In!
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="policy.html">Privacy Policy</a>
+                <a href="policy.html#terms">Terms of Service</a>
+                <a href="mailto:inf.carlos@outlook.com">Contact Support</a>
+            </div>
+            <p class="copyright">
+                © 2026 ZooMinder<br>
+                <small style="opacity: 0.7; font-size: 0.85em;">Codiva® is a registered trademark in Chile (Reg. No. 1481622)</small>
+            </p>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Google Sheets form submission
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz28TZM45_HCaAddyJB9zog-MpQr6NNvaqkEo12PBFpH5HHbcRQhIRbo1CUSuRI3H3z/exec';
+
+        document.getElementById('earlyAccessForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const btn = document.getElementById('submitBtn');
+            const msgDiv = document.getElementById('formMessage');
+            const alert = msgDiv.querySelector('div');
+
+            // Get selected radio button value
+            const willPayRadio = document.querySelector('input[name="willPay"]:checked');
+
+            if (!willPayRadio) {
+                msgDiv.style.display = 'block';
+                alert.style.background = 'rgba(239, 68, 68, 0.2)';
+                alert.style.border = '1px solid rgba(239, 68, 68, 0.5)';
+                alert.style.color = '#fca5a5';
+                alert.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please let us know if you\'d consider paying $2/month.';
+                return;
+            }
+
+            // Disable button and show loading
+            btn.disabled = true;
+            btn.innerHTML = '<span style="display: inline-block; width: 1rem; height: 1rem; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin 0.75s linear infinite;"></span> Submitting...';
+
+            const data = {
+                email: document.getElementById('userEmail').value,
+                willPay: willPayRadio.value,
+                comments: document.getElementById('userComments').value || 'N/A',
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                // Show success message
+                msgDiv.style.display = 'block';
+                alert.style.background = 'rgba(34, 197, 94, 0.2)';
+                alert.style.border = '1px solid rgba(34, 197, 94, 0.5)';
+                alert.style.color = '#86efac';
+                alert.innerHTML = '<i class="fas fa-check-circle"></i> You\'re in! Thanks for joining our beta program. We\'ll reach out soon with next steps.';
+
+                // Reset form
+                document.getElementById('earlyAccessForm').reset();
+
+            } catch (error) {
+                msgDiv.style.display = 'block';
+                alert.style.background = 'rgba(239, 68, 68, 0.2)';
+                alert.style.border = '1px solid rgba(239, 68, 68, 0.5)';
+                alert.style.color = '#fca5a5';
+                alert.innerHTML = '<i class="fas fa-exclamation-circle"></i> Oops! Something went wrong. Please try again or email us at inf.carlos@outlook.com';
+            }
+
+            // Restore button
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-paper-plane"></i> Count Me In!';
+
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                msgDiv.style.display = 'none';
+            }, 5000);
+        });
+
+        // Add keyframe animation for spinner
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes spin {
+                to { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+
+</body></html>
